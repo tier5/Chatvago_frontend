@@ -1,0 +1,111 @@
+<!-- Preloader - style you can find in spinners.css -->
+<!-- <div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+  <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+</div> -->
+<!-- End Preloader - style you can find in spinners.css -->
+
+<!-- Main wrapper  -->
+<div id="main-wrapper">
+  <!-- Unix-login -->
+    <div class="unix-login">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="login-content card">
+                        <div class="login-form">
+                            <h4>Register</h4>
+                            <form [formGroup] = 'registrationForm' (submit) = 'register()'>
+                                <!-- Row -->
+                                <div class="row">
+                                  <div class="col-sm-6 col-md-6 col-lg-6">
+                                      <!-- Form Group First Name -->
+                                      <div class="form-group">
+                                          <label>First Name</label>
+                                          <input type="text" class="form-control" placeholder="First Name" formControlName='firstName'>
+                                            <div *ngIf="registrationForm.get('firstName').invalid && registrationForm.get('firstName').touched">
+                                                <div class="alert alert-danger" *ngIf="registrationForm.get('firstName').hasError('required')">
+                                                  Please enter your first name.
+                                                </div>
+                                            </div>
+                                      </div>
+                                      <!-- End Form Group First Name -->
+                                  </div>
+                                  
+                                  <div class="col-sm-6 col-md-6 col-lg-6">
+                                      <!-- Form Group Last Name -->
+                                      <div class="form-group">
+                                          <label>Last Name</label>
+                                          <input type="text" class="form-control" placeholder="Last Name" formControlName='lastName'>
+                                            <div *ngIf="registrationForm.get('lastName').invalid && registrationForm.get('lastName').touched">
+                                                <div class="alert alert-danger" *ngIf="registrationForm.get('lastName').hasError('required')">
+                                                  Please enter your last name.
+                                                </div>
+                                            </div>
+                                      </div>
+                                      <!-- End Form Group Last Name -->
+                                  </div>
+                                </div>
+                                <!-- End Row -->
+
+                                <!-- Form Group Email Address -->
+                                <div class="form-group">
+                                    <label>Email address</label>
+                                    <input type="email" class="form-control" placeholder="Email" formControlName='email'>
+                                    <div *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').touched">
+                                        <div class="alert alert-danger" *ngIf="registrationForm.get('email').hasError('required')">
+                                            Please enter your email.
+                                        </div>
+                                        <div *ngIf="!registrationForm.get('email').hasError('required') && registrationForm.get('email').hasError('email')" class="alert alert-danger">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Form Group User Name -->
+
+                                <!-- Form Group Password -->
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" class="form-control" placeholder="Password" formControlName='password'>
+                                    <div *ngIf="registrationForm.get('password').invalid && registrationForm.get('password').touched">
+                                        <div class="alert alert-danger" *ngIf="registrationForm.get('password').hasError('required')">
+                                            Please enter your password.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Form Group Password -->
+
+                                <!-- Form Group Confirm Password -->
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder="Confirm Password" formControlName='conf_password'>
+                                    <div *ngIf="registrationForm.get('conf_password').invalid && registrationForm.get('conf_password').touched">
+                                        <div class="alert alert-danger" *ngIf="registrationForm.get('conf_password').hasError('required')">
+                                            Please enter the password again to confirm.
+                                        </div>
+                                        <div class="alert alert-danger" *ngIf="!registrationForm.get('conf_password').hasError('required') && registrationForm.get('conf_password').hasError('confirmPassword')">
+                                            Password and confirm password did not match!
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Form Group Password -->
+
+                                <!-- Submit Button -->
+                                  <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-primary btn-flat m-b-30 m-t-30">Register</button>
+                                <!-- Submit Button -->
+
+                                <!-- Registration Link -->  
+                                  <div class="register-link m-t-15 text-center">
+                                      <p>Already have account ? <a [routerLink]="['/login']"> Sign in</a></p>
+                                  </div>
+                                <!-- End Registration Link -->  
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!-- End Unix-login -->
+</div>
+<!-- End Main wrapper  -->

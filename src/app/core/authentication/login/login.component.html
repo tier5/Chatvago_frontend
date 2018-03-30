@@ -1,0 +1,73 @@
+  <!-- Preloader - style you can find in spinners.css -->
+  <!-- <div class="preloader">
+      <svg class="circular" viewBox="25 25 50 50">
+    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+  </div> -->
+  <!-- End Preloader -->
+
+  <!-- Main wrapper  -->
+  <div id="main-wrapper">
+    <!-- Unix-Login -->
+      <div class="unix-login">
+          <div class="container-fluid">
+              <div class="row justify-content-center">
+                  <div class="col-lg-4">
+                      <div class="login-content card">
+                          <div class="login-form">
+                              <h4>Login</h4>
+                              <form [formGroup] = "loginForm" (submit) = 'login()'>
+                                <!-- Form Group Email -->
+                                  <div class="form-group">
+                                      <label>Email address</label>
+                                      <input type="email" class="form-control" placeholder="Email" formControlName="email" required>
+                                      <div *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                                          <div *ngIf="loginForm.get('email').hasError('required')" class="alert alert-danger">
+                                            Please enter your email.
+                                          </div>
+                                          <div *ngIf="!loginForm.get('email').hasError('required') && loginForm.get('email').hasError('email')" class="alert alert-danger">
+                                            Please enter a valid email address.
+                                          </div>
+                                      </div>
+                                  </div>
+                                <!-- Form Group -->
+
+                                <!-- Form Group Password -->
+                                  <div class="form-group">
+                                      <label>Password</label>
+                                      <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+                                      <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+                                          <div class="alert alert-danger" *ngIf="loginForm.get('password').hasError('required')">
+                                            Please enter your password.
+                                          </div>
+                                      </div>
+                                  </div>
+                                <!-- Form Group -->
+                                
+                                <!-- Forgot Password Link-->
+                                  <div class="checkbox">
+                                      <label class="pull-right">
+                                        <a [routerLink]="['/forgot-password']">Forgotten Password?</a>
+                                      </label>
+                                  </div>
+                                <!-- Forgot Password Link -->
+
+                                <!-- Submit Button -->
+                                  <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                                <!-- Submit Button -->
+
+                                <!-- Registration Link -->  
+                                  <div class="register-link m-t-15 text-center">
+                                      <p>Don't have account ? <a [routerLink]="['/registration']"> Sign Up Here</a></p>
+                                  </div>
+                                <!-- End Registration Link -->  
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- End Unix-Login -->
+  </div>
+  <!-- End Main wrapper  -->
+  
